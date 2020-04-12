@@ -2,13 +2,13 @@
 import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { Formik, FormikProps, Form, Field, FieldProps } from 'formik'
-import { CounterCreateFormModel } from './counter-types'
+import { CounterCreateFormModel } from './types'
 import { FormikInput } from '../../formik/formik-input'
 import { Text } from '../../core/text'
 import { FormikSelect } from '../../formik/formik-select'
 import { Button } from '../../core/button'
 
-type CounterCreateProps = {
+type CreateFormProps = {
   submit: (model: CounterCreateFormModel) => void
 }
 
@@ -21,7 +21,7 @@ const marginBottom = css`
   margin-bottom: 16px;
 `
 
-export const CounterCreateForm: React.FC<CounterCreateProps> = ({ submit }) => {
+export const CreateForm: React.FC<CreateFormProps> = ({ submit }) => {
   return (
     <Formik
       initialValues={initialValues}

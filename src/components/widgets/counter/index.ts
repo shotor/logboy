@@ -1,2 +1,2 @@
 export { Counter } from './counter'
-export { CounterCreateForm } from './counter-create-form'
+export { CreateForm as CounterCreateForm } from './create-form'

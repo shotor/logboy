@@ -3,11 +3,11 @@ import { useHistory, useRouteMatch } from 'react-router-dom'
 import { Container } from '../../components/core/container'
 import { Text } from '../../components/core/text'
 import { CounterCreateForm } from '../../components/widgets/counter'
-import { WidgetDataContext } from '../../components/data/widget-data'
-import { CounterCreateModel } from '../../components/widgets/counter/counter-types'
+import { CounterCreateModel } from '../../components/widgets/counter/types'
+import { WidgetContext } from '../../data/widgets'
 
 export const WidgetCreate: React.FC = () => {
-  const context = useContext(WidgetDataContext)
+  const context = useContext(WidgetContext)
   const { path } = useRouteMatch()
   const history = useHistory()
 

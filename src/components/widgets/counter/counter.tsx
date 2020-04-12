@@ -1,10 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import { WidgetContext } from '../../../data/widgets'
+import { CounterModel } from './types'
 import { Text } from '../../core/text'
-import { WidgetDataContext } from '../../data/widget-data'
+import { UpdateForm } from './update-form'
+import { WidgetContextAPI } from '../../../data/widgets/context'
 
-export const Counter: React.FC<{ id: number }> = ({ id }) => {
-  const { read: resource } = useContext(WidgetDataContext)
-  const { title, createdOn, valueType, type, values } = resource.read(id)
+type CounterContextAPI = WidgetContextAPI<CounterModel<any>>
+
+type CounterProps = {
+  id: number
+}
+
+export const Counter: React.FC<CounterProps> = ({ id }) => {
+  const { read: resource, update } = useContext<CounterContextAPI>(
+    WidgetContext
+  )
+  const [value, setValue] = useState(resource.read(id))
+
+  const { title, createdOn, valueType, type, values } = value
 
   return (
     <>
@@ -16,6 +29,32 @@ export const Counter: React.FC<{ id: number }> = ({ id }) => {
       <Text as="p">created on: {createdOn.toString()}</Text>
       <Text as="p">values: {JSON.stringify(values, null, 2)}</Text>
       <hr />
+      <Text variant="title" as="h2">
+        Count
+      </Text>
+      <UpdateForm
+        submit={async ({ value, date }) => {
+          setValue(
+            await update({
+              id,
+              value,
+              date,
+            })
+          )
+          return
+        }}
+        type={valueType}
+      />
+      <hr />
+      <Text variant="title" as="h2">
+        Manage
+      </Text>
+      <Text as="p">TODO</Text>
+      <hr />
+      <Text variant="title" as="h2">
+        Track
+      </Text>
+      <Text as="p">TODO</Text>
     </>
   )
 }
