@@ -7,8 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preinstall": "sed -i '50d' ./package.json",
-    "postinstall": "git clone https://@github.com/facebook/react.git --depth=1 && cd react && npm install && npm run build react-cache && cd .. && npm i $(npm pack ./react/build/node_modules/react-cache) && rm -rf react react-cache-*.tgz"
+    "build-react-cache": "git clone git@github.com:facebook/react.git --depth=1 && cd react && yarn install --frozen-lockfile && npm run build react-cache && cd .. && npm i $(npm pack ./react/build/node_modules/react-cache) && rm -rf ./react"
   },
   "eslintConfig": {
     "extends": "react-app"
