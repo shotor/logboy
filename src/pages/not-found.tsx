@@ -11,7 +11,7 @@ export const NotFound: React.FC = ({}) => {
           404
         </Text>
         <Text as="p">Page Not Found</Text>
-        {/* <Button onClick={() => navigate(-1)}>Go Back</Button> */}
+        <Button onClick={() => {}}>Go Back</Button>
       </Container>
     </>
   )

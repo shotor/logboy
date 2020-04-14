@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import { Formik, FormikProps, Form, Field, FieldProps } from 'formik'
+import { Formik, Form, Field, FieldProps } from 'formik'
 import { Text } from '../../core/text'
-import { Input } from '../../core/input'
 import { FormikInput } from '../../formik/formik-input'
 import { Button } from '../../core/button'
 
