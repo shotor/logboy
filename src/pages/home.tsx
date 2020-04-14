@@ -5,10 +5,22 @@ import { Text } from '../components/core/text'
 import { Container } from '../components/core/container'
 import { WidgetCollection } from '../components/widgets'
 
+import img from '../logboy.jpg'
+
 export const Home: React.FC = () => {
   return (
     <>
       <Container>
+        <img
+          src={img}
+          alt="logboy"
+          style={{
+            width: 'auto',
+            height: '500px',
+            margin: '0 auto',
+            display: 'flex',
+          }}
+        />
         <Text variant="title" as="h2">
           Home
         </Text>

@@ -15,7 +15,7 @@ export const WidgetCreate: React.FC = () => {
     <>
       <Container>
         <Text variant="title" as="h2">
-          New Counter Widget
+          New Number Counter
         </Text>
         <CounterCreateForm
           submit={async (model) => {
