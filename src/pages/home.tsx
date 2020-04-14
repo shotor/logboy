@@ -5,14 +5,12 @@ import { Text } from '../components/core/text'
 import { Container } from '../components/core/container'
 import { WidgetCollection } from '../components/widgets'
 
-import img from '../logboy.jpg'
-
 export const Home: React.FC = () => {
   return (
     <>
       <Container>
         <img
-          src={img}
+          src="https://i.imgur.com/uethbK1.jpg"
           alt="logboy"
           style={{
             width: 'auto',
