@@ -33,9 +33,9 @@ export const Counter: React.FC<CounterProps> = ({ id }) => {
 
   const numbers = (values as Value<number>[]).map((x) => x.value)
 
-  const min = numbers.reduce((acc, curr) => Math.min(acc, curr))
-  const max = numbers.reduce((acc, curr) => Math.max(acc, curr))
-  const avg = numbers.reduce((acc, curr) => acc + curr) / numbers.length
+  const min = numbers.reduce((acc, curr) => Math.min(acc, curr), Infinity)
+  const max = numbers.reduce((acc, curr) => Math.max(acc, curr), 0)
+  const avg = numbers.reduce((acc, curr) => acc + curr, 0) / numbers.length
 
   const minDiff = avg - min
   const maxDiff = max - avg
